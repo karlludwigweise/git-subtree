@@ -25,7 +25,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
-      - uses: karlludwigweise/git-subtree
+      - uses: karlludwigweise/git-subtree@v1
         with:
           pat: ${{ secrets.PAT }}
           repo: https://github.com/{user}/{repo}.git
