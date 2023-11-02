@@ -1,0 +1,41 @@
+name: "karlludwigweise/git-subtree"
+description: "Run git subtree commands in GitHub Actions"
+branding:
+  icon: git-merge
+  color: gray-dark
+runs:
+  using: "docker"
+  image: "Dockerfile"
+inputs:
+  pat:
+    description: "Personal Access Token (PAT)"
+    required: true
+  git_name:
+    description: "Git User Name"
+    required: false
+    default: GitHub Actions
+  git_email:
+    description: "Git User Email"
+    required: false
+    default: actions@github.com
+  repo:
+    description: "Repository URL (only https path supported)"
+    required: true
+  action:
+    description: "Action (add, pull)"
+    required: true
+  position:
+    description: "branch name, commit sha"
+    required: false
+    default: "main"
+  prefix:
+    description: "Prefix"
+    required: true
+  squash:
+    description: "Squash the merge"
+    required: false
+    default: "true"
+  message:
+    description: "Message"
+    required: false
+    default: "Subtree Action"
