@@ -32,6 +32,8 @@ jobs:
           action: pull
           prefix: my-dir
           message: Custom Commit Message
+      - name: push
+        run: git push
 ```
 
 ## Parameters
