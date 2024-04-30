@@ -19,7 +19,7 @@ git config --global url."https://api:${INPUT_PAT}@github.com/".insteadOf "https:
 git config --unset http."https://github.com/".extraheader
 
 # Update subtree
-git subtree ${INPUT_ACTION} -d --prefix=${INPUT_PREFIX} "${INPUT_REPO}" "${INPUT_POSITION}" --message="${INPUT_MESSAGE}" $SQUASH
+git subtree ${INPUT_ACTION} -d --prefix=${INPUT_PREFIX} "${INPUT_REPO}" "${INPUT_POSITION}" --message="${INPUT_MESSAGE}" $SQUASH || git subtree ${INPUT_ACTION} -d --prefix=${INPUT_PREFIX} "${INPUT_REPO}" "${INPUT_POSITION_FALLBACK}" --message="${INPUT_MESSAGE}" $SQUASH
 
 # Revert git config change
 cp -f .git/config-original .git/config
