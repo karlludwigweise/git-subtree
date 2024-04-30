@@ -28,6 +28,10 @@ inputs:
     description: "branch name, commit sha"
     required: false
     default: "main"
+  position_fallback:
+    description: "branch name, commit sha to try if first fails
+    required: false
+    default: "main"
   prefix:
     description: "Prefix"
     required: true
