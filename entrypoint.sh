@@ -1,12 +1,10 @@
 #!/bin/bash
-# Function to handle errors
-error_handler() {
-    echo "An error occurred. Exiting..."
-    exit 1
-}
 
-# Trap errors and call the error_handler function
-trap 'error_handler' ERR
+# Fail on error
+set -eu -o pipefail
+
+# Debug
+echo "Running git subtree ${INPUT_ACTION} on ${INPUT_REPO} at ${INPUT_POSITION} with prefix ${INPUT_PREFIX}"
 
 # Args
 SQUASH=""
